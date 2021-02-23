@@ -41,10 +41,28 @@ const render = require("./lib/htmlRenderer");
 
 
 inquirer.prompt([
-    {
-
+    {//manager's name
+        type: 'input',
+        message: 'What is your Managers name?',
+        name: 'Manager',
+    },
+    {//manager ID
+        type: 'input',
+        message: 'What is your Managers ID?',
+        name: 'id',
+    },
+    {//Manager office number
+        type: 'input',
+        message: 'What is your Managers office number?',
+        name: 'officeNumber',
+    },
+    {//manager email force valid email
+        type: 'input',
+        message: 'What is your Managers email?',
+        name: 'email',
     }
-]).then((response) => console.log(data) );
+
+]).then((response) => console.log(response) );
 
 
 // After the user has input all employees desired, call the `render` function (required
