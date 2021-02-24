@@ -15,20 +15,6 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-
-
-
-
-
-
-
-//Intern Name
-//Intern ID
-//Intern Email
-//Intern School
-
-//I don't want to add any more team members
-
 //generate html file in output
 //style the page
 
@@ -103,7 +89,38 @@ inquirer.prompt([
             else {
                 return "enter a valid email";
             }
-        }} //return message
+        }}, //return message
+      
+        {// Intern Name
+        type: 'input',
+        message: 'Intern name?',
+        name: 'name',
+    },
+    {//Intern ID
+        type: 'input',
+        message: 'What is your Intern ID?',
+        name: 'id',
+    },
+    {//Intern School
+        type: 'input',
+        message: 'What is your school?',
+        name: 'school',
+    },
+    { //Intern email
+        type: 'input',
+        message: 'What is the Intern email?',
+        name: 'email',
+        validate:  function(email)
+        {// Regex mail check (return true if valid mail)
+            if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
+                return true;
+            }
+            else {
+                return "enter a valid email";
+            }
+        }},       
+        
+        //I don't want to add any more team members
 ]).then((response) => console.log(response) );
 
 // render();
