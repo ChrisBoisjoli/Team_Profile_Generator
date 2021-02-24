@@ -20,10 +20,7 @@ const render = require("./lib/htmlRenderer");
 
 
 
-//Engineer name
-//Engineer ID
-//Engineer email
-//Engineer Github UN
+
 
 //Intern Name
 //Intern ID
@@ -73,14 +70,40 @@ inquirer.prompt([
         } //return message
         
     },
+    //build team select engineer or intern
     {type: 'list',
     name: "role",
     message:'add a team member',
     choices: ['Engineer','Intern'],
-    }
-    //build team select engineer or intern
-    
-
+    },
+        //Engineer name
+    {type: 'input',
+        message: 'Engineer name?',
+        name: 'name',
+    },
+    {//Engineer ID
+        type: 'input',
+        message: 'What is your Engineer ID?',
+        name: 'id',
+    },
+    {//Engineer Github UN
+        type: 'input',
+        message: 'What is Engineer GitHub user name?',
+        name: 'github',
+    },
+    {//Engineer email
+        type: 'input',
+        message: 'What is the Engineer email?',
+        name: 'email',
+        validate:  function(email)
+        {// Regex mail check (return true if valid mail)
+            if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
+                return true;
+            }
+            else {
+                return "enter a valid email";
+            }
+        }} //return message
 ]).then((response) => console.log(response) );
 
 // render();
