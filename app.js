@@ -4,7 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-// const validator = require("email-validator");
+
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -18,7 +18,7 @@ const render = require("./lib/htmlRenderer");
 
 
 
-//build team select engineer or intern
+
 
 //Engineer name
 //Engineer ID
@@ -62,8 +62,20 @@ inquirer.prompt([
         type: 'input',
         message: 'What is your Managers email?',
         name: 'email',
-        // validate: 'email','email': "required|email", 
+        validate:  function(email)
+        {
+
+            // Regex mail check (return true if valid mail)
+            if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
+                return true;
+            }
+            else {
+                return "enter a valid email";
+            }
+        } //return message
     },
+    //build team select engineer or intern
+    
 
 ]).then((response) => console.log(response) );
 
