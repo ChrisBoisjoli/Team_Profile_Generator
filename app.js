@@ -46,7 +46,7 @@ inquirer.prompt([
     {//manager's name
         type: 'input',
         message: 'What is your Managers name?',
-        name: 'Manager',
+        name: 'name',
     },
     {//manager ID
         type: 'input',
@@ -71,7 +71,13 @@ inquirer.prompt([
                 return "enter a valid email";
             }
         } //return message
+        
     },
+    {type: 'list',
+    name: "role",
+    message:'add a team member',
+    choices: ['Engineer','Intern'],
+    }
     //build team select engineer or intern
     
 
