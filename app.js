@@ -63,9 +63,7 @@ inquirer.prompt([
         message: 'What is your Managers email?',
         name: 'email',
         validate:  function(email)
-        {
-
-            // Regex mail check (return true if valid mail)
+        {// Regex mail check (return true if valid mail)
             if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
                 return true;
             }
