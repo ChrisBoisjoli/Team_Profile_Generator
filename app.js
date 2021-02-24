@@ -23,9 +23,7 @@ const render = require("./lib/htmlRenderer");
 //Please Build your Team
 console.log('Please Build Your Team'),
 
-inquirer.prompt([
-   
-    
+inquirer.prompt([  
     {//manager's name
         type: 'input',
         message: 'What is your Managers name?',
@@ -53,9 +51,7 @@ inquirer.prompt([
             else {
                 return "enter a valid email";
             }
-        } //return message
-        
-    },
+        }},
     //build team select engineer or intern
     {type: 'list',
     name: "role",
@@ -89,36 +85,40 @@ inquirer.prompt([
             else {
                 return "enter a valid email";
             }
-        }}, //return message
-      
+        }}, 
         {// Intern Name
         type: 'input',
         message: 'Intern name?',
         name: 'name',
-    },
-    {//Intern ID
-        type: 'input',
-        message: 'What is your Intern ID?',
-        name: 'id',
-    },
-    {//Intern School
-        type: 'input',
-        message: 'What is your school?',
-        name: 'school',
-    },
-    { //Intern email
-        type: 'input',
-        message: 'What is the Intern email?',
-        name: 'email',
-        validate:  function(email)
-        {// Regex mail check (return true if valid mail)
-            if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
-                return true;
-            }
-            else {
-                return "enter a valid email";
-            }
-        }},       
+        },
+        {//Intern ID
+            type: 'input',
+            message: 'What is your Intern ID?',
+            name: 'id',
+        },
+        {//Intern School
+            type: 'input',
+            message: 'What is your school?',
+            name: 'school',
+        },
+        { //Intern email
+            type: 'input',
+            message: 'What is the Intern email?',
+            name: 'email',
+            validate:  function(email)
+            {// Regex mail check (return true if valid mail)
+                if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
+                    return true;
+                }
+                else {
+                    return "enter a valid email";
+                }
+            }},   
+
+            {type: 'confirm',
+            name: "add",
+            message:'Do you want to add another team member',
+            },
         
         //I don't want to add any more team members
 ]).then((response) => console.log(response) );
