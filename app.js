@@ -45,8 +45,13 @@ function createTeam(){
             createTeam()
         } else {
             console.log(employees);
-            render ();
+            function createHTML(){
+                const pageHTML = render (employees);
+                fs.writeFile(outputPath, pageHTML, (err) => err ? console.log(err) : console.log("Created Team!"));
+            }
+            
         }
+        createHTML();
     });
 };
 
@@ -55,7 +60,7 @@ function createTeam(){
 
 
 
-// createTeam (); 
+createTeam (); 
 
 
 
