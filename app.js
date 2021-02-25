@@ -23,9 +23,16 @@ function createTeam(){
                 teamData.name,
                 teamData.id,
                 teamData.email,
-                teamData.officeNumber
+                teamData.officeNumber,
             );
-        }
+        }else if (teamData.role === "Engineer"){
+            teamMember = new Engineer (
+                teamData.name,
+                teamData.id,
+                teamData.email,
+                teamData.github,
+            );
+        };
     });
 };
 
