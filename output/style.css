@@ -1,3 +1,11 @@
-body{
-    background-color: black;
-}
+body {
+    background-image: url("../assets/teambuilder.jpeg"); 
+    background-color: white; 
+    height: auto; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed; 
+    font-family: 'Heebo', sans-serif;
+    color: white;
+  }
