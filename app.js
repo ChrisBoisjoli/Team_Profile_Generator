@@ -15,6 +15,7 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 function createTeam(){
+    
     return inquirer.prompt(questions).then((responseObj) => {
         let teamData = responseObj;
         let teamMember = "";
