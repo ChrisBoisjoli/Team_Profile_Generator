@@ -41,6 +41,7 @@ function createTeam(){
             );
         };
         employees.push(teamMember);
+
         if (responseObj.addAnother){
             createTeam()
         } else {
@@ -48,7 +49,7 @@ function createTeam(){
             function createHTML(){
                 const pageHTML = render(employees);
                 fs.writeFile(outputPath, pageHTML, (err) => err ? console.log(err) : console.log("Created Team!"))
-            }
+            };
             createHTML();
         }
         
