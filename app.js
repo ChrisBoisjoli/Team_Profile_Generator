@@ -18,7 +18,14 @@ function createTeam(){
     return inquirer.prompt(questions).then((responseObj) => {
         let teamData = responseObj;
         let teamMember = "";
-        
+        if (teamData.role === "Manager"){
+            teamMember = new Manager (
+                teamData.name,
+                teamData.id,
+                teamData.email,
+                teamData.officeNumber
+            );
+        }
     });
 };
 
