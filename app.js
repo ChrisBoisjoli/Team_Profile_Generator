@@ -46,7 +46,7 @@ function createTeam(){
         if (responseObj.addAnother){
             createTeam()
         } else {
-            // console.log(employees);
+            console.log(employees);
             function createHTML(){
                 
                 const pageHTML = render(employees);
