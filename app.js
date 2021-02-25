@@ -40,7 +40,7 @@ function createTeam(){
                 teamData.school,
             );
         };
-        employees.push(teamData);
+        employees.push(teamMember);
         if (responseObj.addAnother){
             createTeam()
         } else {
