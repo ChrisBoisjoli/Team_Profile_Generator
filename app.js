@@ -24,7 +24,7 @@ const render = require("./lib/htmlRenderer");
       function init (){ return inquirer.prompt(questions).then((response) => console.log(response));}; 
 
 // render();
-// init();
+init();
 
 
 // After the user has input all employees desired, call the `render` function (required
