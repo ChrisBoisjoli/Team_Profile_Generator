@@ -40,6 +40,13 @@ function createTeam(){
                 teamData.school,
             );
         };
+        employees.push(teamData);
+        if (responseObj.addAnother){
+            createTeam()
+        } else {
+            console.log(employees);
+            render ();
+        }
     });
 };
 
