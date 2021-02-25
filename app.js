@@ -32,6 +32,13 @@ function createTeam(){
                 teamData.email,
                 teamData.github,
             );
+        }else if (teamData.role === "Intern"){
+            teamMember = new Intern (
+                teamData.name,
+                teamData.id,
+                teamData.email,
+                teamData.school,
+            );
         };
     });
 };
