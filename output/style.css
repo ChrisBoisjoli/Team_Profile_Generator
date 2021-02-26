@@ -1,17 +1,18 @@
 
-body {
+  body {
     background-image: url("../assets/teambuilder.jpeg"); 
     background-color: white; 
     height: auto; 
-    background-position: center; 
+    background-position: center;  
     background-repeat: no-repeat; 
-    background-size: cover;
-    background-attachment: fixed; 
-    color: rgb(10, 69, 69);
-    font-family: 'Courier New', Courier, monospace;
+    background-size: cover; 
+    background-attachment: fixed;  
+    color: rgb(10, 69, 69); 
+    font-family: 'Courier New', Courier, monospace; 
     font-weight: bold;
-  };
+  }; 
   .team-area {
+    background-image: url("../assets/teambuilder.jpeg"); 
     max-width: 1000px;
     margin: 3em auto;
     flex-wrap: wrap;
