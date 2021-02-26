@@ -11,4 +11,30 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
   };
+  .team-area {
+    max-width: 1000px;
+    margin: 3em auto;
+    flex-wrap: wrap;
+  }
+  ​
+  .employee-card:hover{ 
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    border: none;
+  }
+  ​
+  .employee-card {
+    margin: 1em;
+    max-width: 280px;
+    width: 90%;
+    min-height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  ​
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   
